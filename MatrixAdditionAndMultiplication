@@ -1,0 +1,58 @@
+Xrows = int(input("Enter the number of rows in first matrix:")) 
+Xcols = int(input("Enter the number of columns in first matrix:")) 
+
+X = [] 
+print("Enter the entries row-wise:") 
+  
+for i in range(Xrows):
+    a =[]
+    for j in range(Xcols):
+         a.append(int(input())) 
+    X.append(a) 
+  
+for i in range(Xrows): 
+    for j in range(Xcols): 
+        print(X[i][j], end = " ") 
+    print()
+
+
+Yrows = int(input("Enter the number of rows in second matrix:")) 
+Ycols = int(input("Enter the number of columns in second matrix:")) 
+
+Y = [] 
+print("Enter the entries row-wise:") 
+  
+for i in range(Yrows):
+    a =[]
+    for j in range(Ycols):
+         a.append(int(input())) 
+    Y.append(a) 
+  
+for i in range(Yrows): 
+    for j in range(Ycols): 
+        print(Y[i][j], end = " ") 
+    print()
+
+
+if(Xrows==Yrows and Xcols==Ycols):
+    addi = [[X[i][j] + Y[i][j]  for j in range(len(X[0]))] for i in range(len(X))]
+
+    print("The sum of matrices is: ")
+    for a in addi:
+        print(a)
+
+
+if(Xcols==Yrows): 
+    product = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
+
+    print("The product of matrices is: ")
+    for p in product:
+        print(p)
+
+
+if(Xrows!=Yrows or Xcols!=Ycols):
+    print("Matrix Addition is not possible.")
+
+
+if(Xcols!=Yrows):
+    print("Matrix Multiplication is not possible.")
